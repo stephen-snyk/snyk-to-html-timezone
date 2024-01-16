@@ -28,6 +28,9 @@ program
     '-a, --actionable-remediation',
     'Display actionable remediation info if available',
   )
+  .option(
+    '-tz, --timezone', 'Specify timezone other than UTC',
+  )
   .parse(process.argv);
 
 let template;

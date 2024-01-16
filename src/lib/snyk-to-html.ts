@@ -7,7 +7,8 @@ import * as debugModule from 'debug';
 import fs = require('fs');
 import Handlebars = require('handlebars');
 import marked = require('marked');
-import moment = require('moment');
+import moment = require('moment-timezone');
+//import moment from 'moment';
 import path = require('path');
 import { addIssueDataToPatch, getUpgrades, severityMap, IacProjectType } from './vuln';
 import {
@@ -381,7 +382,8 @@ async function readInputFromStdin(): Promise<string> {
 // handlebar helpers
 const hh = {
   markdown: marked.parse,
-  moment: (date, format) => moment.utc(date).format(format),
+//  moment.tz.names();,
+  moment: (date, format) => moment(date).tz(timezone).format(format),
   count: data => data && data.length,
   dump: (data, spacer) => JSON.stringify(data, null, spacer || null),
   // block helpers
