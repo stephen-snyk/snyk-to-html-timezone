@@ -51,7 +51,7 @@ Snyk JSON to HTML Mapper mapper works with the different Snyk Products.  Change 
 
       Run the following line to create a file called `results-code.html`:
 
-      `snyk code test --json | snyk-to-html -o results-code.html`
+      `snyk code test --sarif | snyk-to-html -o results-code.html`
 
 
    **For Snyk Infrastructure as Code (IaC)**
